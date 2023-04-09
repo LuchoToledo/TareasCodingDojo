@@ -13,12 +13,6 @@ const Pokemones = () => {
         console.log(response)
     }
     
-//useEffect(()=>{
-   // cargarPokemones()
-
-//}, [])
-
-
     return (
         <div>
             <div>
