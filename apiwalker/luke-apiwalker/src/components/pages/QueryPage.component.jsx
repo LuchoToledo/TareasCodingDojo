@@ -1,9 +1,10 @@
 // 6157f0c69d9f58730a07f04e8c7445f2
 
-import axios from "axios";
+//import axios from "axios";
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import DetailComponent from "../Detail.component";
+
 
 
 //     "films": "https://swapi.dev/api/films/",
@@ -17,7 +18,7 @@ import DetailComponent from "../Detail.component";
 export default function QueryPage(props){
     let [resources, setResources] = useState("films");
     let [id, setId] = useState("");
-    let [resource, setResource] = useState(null); 
+    let [resource] = useState(null); 
     const navigate = useNavigate();
 
     // resource: Respuesta de la API, es decir un objeto
@@ -27,18 +28,20 @@ export default function QueryPage(props){
     // }
     //  
 
-    let submitData = () => {
-        var reg = /^\d+$/;
-        if (id && reg.test(id)){
-            axios.get(`https://swapi.dev/api/${resources}/${id}`)
-                .then((response)=> {
-                    setResource(response.data);
-                })
-                .catch((error) => {
-                    setResource(null);
-                    navigate("/error");
-                })
-        }
+    const submitData = () => {
+       // var reg = /^\d+$/;
+        //if (id && reg.test(id)){
+          //  axios.get(`https://swapi.dev/api/${resources}/${id}`)
+            //    .then((response)=> {
+              //      setResource(response.data);
+               // })
+               // .catch((error) => {
+                //    setResource(null);
+                  //  navigate("/error");
+                //})
+        //}
+        navigate(`/${id}`);
+    
     }
     
     let {name, title, ...rest} = resource || {};
