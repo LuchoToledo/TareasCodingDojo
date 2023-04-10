@@ -13,10 +13,3 @@ export default function DetailComponent(prop){
         </div>
     )
 }
-/// {
-//      name: "Chao",
-///     age: 1,
-///     height: 192,
-/// }
-
-// [("name", "Chao"), ("age", 1) ]
